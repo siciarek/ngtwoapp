@@ -1,19 +1,26 @@
 <h1>{{title}}</h1>
 
+<h3>Lista</h3>
+
 <ul>
     <li *ngFor="let item of items">
         [{{item.id}}] {{item.name}}
     </li>
 </ul>
 
+<h3>Tabela</h3>
+
 <table>
     <thead>
         <th>#</th>
         <th>Name</th>
+        <th>Age</th>
     </thead>
     <tbody>
         <tr *ngFor="let item of items">
-            <td>{{item.id}}</td><td>{{item.name}}</td>
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
         </tr>
     </tbody>
 </table>

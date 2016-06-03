@@ -10,15 +10,18 @@ export class AppComponent {
     items: Object[] = [
         {
             "id": 132,
-            "name": "Sokół Millenium"
+            "name": "Sokół Millenium",
+            "age": 45
         },
         {
             "id": 324,
-            "name": "Sokół Maltański"
+            "name": "Sokół Maltański",
+            "age": 15
         },
         {
             "id": 544,
-            "name": "Barbarella"
+            "name": "Barbarella",
+            "age": 25
         }
     ];
 }
