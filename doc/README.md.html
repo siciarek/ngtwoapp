@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "", thisFile = "README.md", defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+      <div class="heading h1">
+        <a href="#angular%202%20quickstart%20source">Angular 2 QuickStart Source</a>
+      </div>
+      <div class="heading h2">
+        <a href="#prerequisites">Prerequisites</a>
+      </div>
+      <div class="heading h2">
+        <a href="#create%20a%20new%20project%20based%20on%20the%20quickstart">Create a new project based on the QuickStart</a>
+      </div>
+      <div class="heading h3">
+        <a href="#create%20a%20new%20git%20repo">Create a new git repo</a>
+      </div>
+      <div class="heading h2">
+        <a href="#install%20npm%20packages">Install npm packages</a>
+      </div>
+      <div class="heading h3">
+        <a href="#npm%20scripts">npm scripts</a>
+      </div>
+      <div class="heading h2">
+        <a href="#testing">Testing</a>
+      </div>
+      <div class="heading h3">
+        <a href="#unit%20tests">Unit Tests</a>
+      </div>
+      <div class="heading h3">
+        <a href="#end-to-end%20(e2e)%20tests">End-to-end (E2E) Tests</a>
+      </div>
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="docs markdown">
+<div class="pilwrap" id="angular%202%20quickstart%20source">
+  <h1>
+    <a href="#angular%202%20quickstart%20source" name="angular%202%20quickstart%20source" class="pilcrow">&#182;</a>
+    Angular 2 QuickStart Source
+  </h1>
+</div>
+
+
+<p>This repository holds the TypeScript source code of the <a href="https://angular.io/docs/ts/latest/quickstart.html">angular.io quickstart</a>,
+the foundation for most of the documentation samples and potentially a good starting point for your application.</p>
+
+<p>It's been extended with testing support so you can start writing tests immediately.</p>
+
+<p><strong>This is not the perfect arrangement for your application. It is not designed for production. 
+It exists primarily to get you started quickly with learning and prototyping in Angular 2</strong></p>
+
+<p>We are unlikely to accept suggestions about how to grow this QuickStart into something it is not.
+Please keep that in mind before posting issues and PRs.</p>
+
+
+<div class="pilwrap" id="prerequisites">
+  <h2>
+    <a href="#prerequisites" name="prerequisites" class="pilcrow">&#182;</a>
+    Prerequisites
+  </h2>
+</div>
+
+
+<p>Node.js and npm are essential to Angular 2 development. </p>
+
+<p><a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">
+Get it now</a> if it's not already installed on your machine.</p>
+
+<p><strong>Verify that you are running at least node <code>v5.x.x</code> and npm <code>3.x.x</code></strong>
+by running <code>node -v</code> and <code>npm -v</code> in a terminal/console window.
+Older versions produce errors.</p>
+
+<p>We recommend <a href="https://github.com/creationix/nvm">nvm</a> for managing multiple versions of node and npm.</p>
+
+
+<div class="pilwrap" id="create%20a%20new%20project%20based%20on%20the%20quickstart">
+  <h2>
+    <a href="#create%20a%20new%20project%20based%20on%20the%20quickstart" name="create%20a%20new%20project%20based%20on%20the%20quickstart" class="pilcrow">&#182;</a>
+    Create a new project based on the QuickStart
+  </h2>
+</div>
+
+
+<p>Clone this repo into new project folder (e.g., <code>my-proj</code>).</p>
+
+
+<div class="highlight"><pre><code>git clone  https://github.com/angular/quickstart  my-proj
+<span class="nb">cd </span>my-proj
+</code></pre></div>
+
+
+
+<p>We have no intention of updating the source on <code>angular/quickstart</code>.
+Discard everything "git-like" by deleting the <code>.git</code> folder.</p>
+
+
+<div class="highlight"><pre><code>rm -rf .git  // non-Windows
+rd .git /S/Q // windows
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="create%20a%20new%20git%20repo">
+  <h3>
+    <a href="#create%20a%20new%20git%20repo" name="create%20a%20new%20git%20repo" class="pilcrow">&#182;</a>
+    Create a new git repo
+  </h3>
+</div>
+
+
+<p>You could <a href="#start-development">start writing code</a> now and throw it all away when you're done.
+If you'd rather preserve your work under source control, consider taking the following steps.</p>
+
+<p>Initialize this project as a <em>local git repo</em> and make the first commit:</p>
+
+
+<div class="highlight"><pre><code>git init
+git add .
+git commit -m <span class="s2">&quot;Initial commit&quot;</span>
+</code></pre></div>
+
+
+
+<p>Create a <em>remote repository</em> for this project on the service of your choice.</p>
+
+<p>Grab its address (e.g. <em><code>https://github.com/&lt;my-org&gt;/my-proj.git</code></em>) and push the <em>local repo</em> to the <em>remote</em>.</p>
+
+
+<div class="highlight"><pre><code>git remote add origin &lt;repo-address&gt;
+git push -u origin master
+</code></pre></div>
+
+
+
+
+<div class="pilwrap" id="install%20npm%20packages">
+  <h2>
+    <a href="#install%20npm%20packages" name="install%20npm%20packages" class="pilcrow">&#182;</a>
+    Install npm packages
+  </h2>
+</div>
+
+
+<blockquote>
+  <p>See npm and nvm version notes above</p>
+</blockquote>
+
+<p>Install the npm packages described in the <code>package.json</code> and verify that it works:</p>
+
+<p><strong>Attention Windows Developers:  You must run all of these commands in administrator mode</strong>.</p>
+
+
+<div class="highlight"><pre><code>npm install
+npm start
+</code></pre></div>
+
+
+
+<p>The <code>npm start</code> command first compiles the application, 
+then simultaneously re-compiles and runs the <code>lite-server</code>.
+Both the compiler and the server watch for file changes.</p>
+
+<p>Shut it down manually with Ctrl-C.</p>
+
+<p>You're ready to write your application.</p>
+
+
+<div class="pilwrap" id="npm%20scripts">
+  <h3>
+    <a href="#npm%20scripts" name="npm%20scripts" class="pilcrow">&#182;</a>
+    npm scripts
+  </h3>
+</div>
+
+
+<p>We've captured many of the most useful commands in npm scripts defined in the <code>package.json</code>:</p>
+
+<ul>
+<li><code>npm start</code> - runs the compiler and a server at the same time, both in "watch mode".</li>
+<li><code>npm run tsc</code> - runs the TypeScript compiler once.</li>
+<li><code>npm run tsc:w</code> - runs the TypeScript compiler in watch mode; the process keeps running, awaiting changes to TypeScript files and re-compiling when it sees them.</li>
+<li><code>npm run lite</code> - runs the <a href="https://www.npmjs.com/package/lite-server">lite-server</a>, a light-weight, static file server, written and maintained by
+<a href="https://github.com/johnpapa">John Papa</a> and
+<a href="https://github.com/cgmartin">Christopher Martin</a>
+with excellent support for Angular apps that use routing.</li>
+<li><code>npm run typings</code> - runs the typings tool.</li>
+<li><code>npm run postinstall</code> - called by <em>npm</em> automatically <em>after</em> it successfully completes package installation. This script installs the TypeScript definition files this app requires.</li>
+</ul>
+
+<p>Here are the test related scripts:
+* <code>npm test</code> - compiles, runs and watches the karma unit tests
+* <code>npm run webdriver:update</code> - ONE TIME update for protractor end-to-end (e2e) tests
+* <code>npm run e2e</code> - run protractor e2e tests, written in JavaScript (*e2e-spec.js)</p>
+
+
+<div class="pilwrap" id="testing">
+  <h2>
+    <a href="#testing" name="testing" class="pilcrow">&#182;</a>
+    Testing
+  </h2>
+</div>
+
+
+<p>The QuickStart documentation doesn't discuss testing. 
+This repo adds both karma/jasmine unit test and protractor end-to-end testing support.</p>
+
+<p>These tools are configured for specific conventions described below.</p>
+
+<p><em>It is unwise and rarely possible to run the application, the unit tests, and the e2e tests at the same time.
+We recommend that you shut down one before starting another.</em></p>
+
+
+<div class="pilwrap" id="unit%20tests">
+  <h3>
+    <a href="#unit%20tests" name="unit%20tests" class="pilcrow">&#182;</a>
+    Unit Tests
+  </h3>
+</div>
+
+
+<p>TypeScript unit-tests are usually in the <code>app</code> folder. Their filenames must end in <code>.spec</code>.</p>
+
+<p>Look for the example <code>app/app.component.spec.ts</code>.
+Add more <code>.spec.ts</code> files as you wish; we configured karma to find them.</p>
+
+<p>Run it with <code>npm test</code></p>
+
+<p>That command first compiles the application, then simultaneously re-compiles and runs the karma test-runner.
+Both the compiler and the karma watch for (different) file changes.</p>
+
+<p>Shut it down manually with Ctrl-C.</p>
+
+<p>Test-runner output appears in the terminal window.
+We can update our app and our tests in real-time, keeping a weather eye on the console for broken tests.
+Karma is occasionally confused and it is often necessary to shut down its browser or even shut the command down (Ctrl-C) and
+restart it. No worries; it's pretty quick.</p>
+
+<p>The <code>HTML-Reporter</code> is also wired in. That produces a prettier output; look for it in <code>~_test-output/tests.html</code>.</p>
+
+
+<div class="pilwrap" id="end-to-end%20(e2e)%20tests">
+  <h3>
+    <a href="#end-to-end%20(e2e)%20tests" name="end-to-end%20(e2e)%20tests" class="pilcrow">&#182;</a>
+    End-to-end (E2E) Tests
+  </h3>
+</div>
+
+
+<p><strong>BEFORE RUNNING THE FIRST TEST</strong> you must update the Selenium webdriver. Run <code>npm run webdriver:update</code>.</p>
+
+<p>E2E tests are usually at the project root, above the <code>app</code> folder. 
+Their filenames must end in <code>e2e-spec.js</code>.</p>
+
+<p>E2E tests must be written in JavaScript (the author has not figured out how to write them in TS yet).</p>
+
+<p>Look for the example <code>e2e-spec.ts</code> in the root folder.
+Add more <code>e2e-spec.js</code> files as you wish (although one usually suffices for small projects); 
+we configured protractor to find them.</p>
+
+<p>Thereafter, run them with <code>npm run e2e</code>.</p>
+
+<p>That command first compiles, then simultaneously starts the Http-Server at <code>localhost:8080</code>
+and launches protractor.  </p>
+
+<p>The pass/fail test results appear at the bottom of the terminal window.
+A custom reporter (see <code>protractor.config.js</code>) generates a  <code>./protractor-results.txt</code> file 
+which is easier to read; this file is excluded from source control.</p>
+
+<p>Shut it down manually with Ctrl-C.</p></div>
+  </div>
+</body>
+</html>

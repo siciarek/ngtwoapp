@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>karma-test-shim.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "", thisFile = "karma-test-shim.js", defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs">
+          <h1>karma-test-shim.js</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
+</div>
+<p>/<em>global jasmine, <strong>karma</strong>, window</em>/</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="nb">Error</span><span class="p">.</span><span class="nx">stackTraceLimit</span> <span class="o">=</span> <span class="kc">Infinity</span><span class="p">;</span>
+<span class="nx">jasmine</span><span class="p">.</span><span class="nx">DEFAULT_TIMEOUT_INTERVAL</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span>
+
+<span class="nx">__karma__</span><span class="p">.</span><span class="nx">loaded</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">isJsFile</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">path</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;.js&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">isSpecFile</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="sr">/\.spec\.js$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">path</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">isBuiltFile</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">builtPath</span> <span class="o">=</span> <span class="s1">&#39;/base/app/&#39;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">isJsFile</span><span class="p">(</span><span class="nx">path</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">builtPath</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="o">==</span> <span class="nx">builtPath</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">allSpecFiles</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">__karma__</span><span class="p">.</span><span class="nx">files</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isSpecFile</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">isBuiltFile</span><span class="p">);</span>
+
+<span class="nx">System</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+  <span class="nx">baseURL</span><span class="o">:</span> <span class="s1">&#39;/base&#39;</span><span class="p">,</span>
+  <span class="nx">packageWithIndex</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// sadly, we can&#39;t use umd packages (yet?)</span>
+<span class="p">});</span>
+
+<span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;systemjs.config.js&#39;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span>
+      <span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@angular/core/testing&#39;</span><span class="p">),</span>
+      <span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="s1">&#39;@angular/platform-browser-dynamic/testing&#39;</span><span class="p">)</span>
+    <span class="p">])</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">providers</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">testing</span> <span class="o">=</span> <span class="nx">providers</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">testingBrowser</span> <span class="o">=</span> <span class="nx">providers</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+
+    <span class="nx">testing</span><span class="p">.</span><span class="nx">setBaseTestProviders</span><span class="p">(</span>
+      <span class="nx">testingBrowser</span><span class="p">.</span><span class="nx">TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS</span><span class="p">,</span>
+      <span class="nx">testingBrowser</span><span class="p">.</span><span class="nx">TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS</span><span class="p">);</span>
+
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+</pre></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-2" id="section-2">&#182;</a>
+</div>
+<p>Finally, load all spec files.
+This will run the tests directly.</p>
+        </td>
+        <td class="code highlight"><div class="highlight"><pre>
+    <span class="k">return</span> <span class="nx">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">(</span>
+      <span class="nx">allSpecFiles</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">moduleName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">System</span><span class="p">.</span><span class="kr">import</span><span class="p">(</span><span class="nx">moduleName</span><span class="p">);</span>
+      <span class="p">}));</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">__karma__</span><span class="p">.</span><span class="nx">start</span><span class="p">,</span> <span class="nx">__karma__</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>
