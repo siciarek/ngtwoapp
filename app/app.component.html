@@ -5,3 +5,15 @@
         [{{item.id}}] {{item.name}}
     </li>
 </ul>
+
+<table>
+    <thead>
+        <th>#</th>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of items">
+            <td>{{item.id}}</td><td>{{item.name}}</td>
+        </tr>
+    </tbody>
+</table>
