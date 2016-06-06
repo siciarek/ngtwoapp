@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TabularComponent } from './tabular.component';
 import { ListComponent } from './list.component';
+import { DataService } from './data.service';
 
 @Component({
     selector: 'app',
@@ -9,30 +10,16 @@ import { ListComponent } from './list.component';
     directives: [
         ListComponent,
         TabularComponent
+    ],
+    providers: [
+        DataService
     ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     title: string = 'Takie tam';
-    items: Object[] = [
-        {
-            "id": 132,
-            "name": "Sokół Millenium",
-            "age": 45
-        },
-        {
-            "id": 324,
-            "name": "Sokół Maltański",
-            "age": 15
-        },
-        {
-            "id": 544,
-            "name": "Barbarella",
-            "age": 25
-        },
-        {
-            "id": 421,
-            "name": "Aspargun",
-            "age": 25
-        }
-    ];
+    items: Object[];
+
+    ngOnInit() {
+        this.items = [];
+    }
 }
