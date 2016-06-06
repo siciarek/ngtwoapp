@@ -1,9 +1,14 @@
 import { Component } from '@angular/core';
+import { TabularComponent } from './tabular.component';
+
 
 @Component({
     selector: 'app',
     templateUrl: 'app/app.component.html',
     styleUrls: ['app/app.component.css'],
+    directives: [
+        TabularComponent
+    ]
 })
 export class AppComponent {
     title: string = 'Takie tam';
@@ -21,6 +26,11 @@ export class AppComponent {
         {
             "id": 544,
             "name": "Barbarella",
+            "age": 25
+        },
+        {
+            "id": 421,
+            "name": "Aspargun",
             "age": 25
         }
     ];
