@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
     styleUrls: ['app/list.component.css'],
 })
 export class ListComponent {
-    items: Object[];
+    items: Object[] = [
+        // {
+        //     "name":"Cox"
+        // }
+    ];
 }

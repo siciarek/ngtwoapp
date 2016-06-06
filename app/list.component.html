@@ -1,5 +1,9 @@
-<ul>
+<ul *ngIf="items.length > 0">
     <li *ngFor="let item of items">
         {{item.name}}
     </li>
 </ul>
+
+<div *ngIf="items.length === 0" class="alert alert-warning">
+    List is empty.
+</div>
