@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './data.service';
+import { Http } from '@angular/http';
 
 @Component({
     selector: 'list',
@@ -9,9 +9,11 @@ import { DataService } from './data.service';
 export class ListComponent implements OnInit {
     items: Object[];
 
-    constructor(private dataService: DataService) {}
+    construct(http:Http) {
+        this.items = http.get('source/data.json');
+    }
 
     ngOnInit() {
-        this.items = this.dataService.getData();
+        this.items = [];
     }
 }
