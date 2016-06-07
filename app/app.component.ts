@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { TabularComponent } from './tabular.component';
 import { ListComponent } from './list.component';
-import { DataService } from './data.service';
 
 @Component({
     selector: 'app',
@@ -10,16 +9,8 @@ import { DataService } from './data.service';
     directives: [
         ListComponent,
         TabularComponent
-    ],
-    providers: [
-        DataService
     ]
 })
-export class AppComponent implements OnInit {
-    title: string = 'Takie tam';
-    items: Object[];
-
-    ngOnInit() {
-        this.items = [];
-    }
+export class AppComponent {
+    title: string = 'Dummy';
 }
