@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataService {
 
-    private serviceUrl = 'source/data.json';  // URL to web api
+    private serviceUrl = 'source/data.php';  // URL to web api
 
     constructor(private http: Http) { }
 
@@ -18,6 +18,52 @@ export class DataService {
             .then(response => response.json().data.items)
             .catch(this.handleError);
     }
+
+    getItem(id: number) {
+
+        return this.getList()
+                 .then(items => items.filter(item => item.id === id)[0]);
+    }
+
+    // Create item
+    private create(item: Object): Promise<Object> {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+
+        return this.http
+            .post(this.serviceUrl, JSON.stringify(item), { headers: headers })
+            .toPromise()
+            .then(response => response.json())
+            .catch(this.handleError);
+    }
+
+/*
+    delete(hero: Hero) {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      let url = `${this.heroesUrl}/${hero.id}`;
+
+      return this.http
+                 .delete(url, headers)
+                 .toPromise()
+                 .catch(this.handleError);
+    }
+
+
+    // Update existing Hero
+    private put(hero: Hero) {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+
+      let url = `${this.heroesUrl}/${hero.id}`;
+
+      return this.http
+                 .put(url, JSON.stringify(hero), {headers: headers})
+                 .toPromise()
+                 .then(() => hero)
+                 .catch(this.handleError);
+    }
+*/
 
     private handleError(error: any) {
         console.error('An error occurred', error);
