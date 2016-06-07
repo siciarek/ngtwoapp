@@ -10,12 +10,9 @@ import { DataService } from './data.service';
     ]
 })
 export class ListComponent implements OnInit {
-
     items: Object[] = [];
 
-    construct(http:Http) {
-        this.items = http.get('source/data.json');
-    }
+    constructor(private dataService: DataService) {}
 
     ngOnInit() {
         this.dataService
