@@ -5,3 +5,8 @@ table thead {
 table td {
     cursor: pointer;
 }
+
+button.add {
+    display: block;
+    margin-bottom: 16px
+}

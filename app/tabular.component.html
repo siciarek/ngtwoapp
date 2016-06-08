@@ -1,16 +1,20 @@
-<button type="button" (click)="createRow()">Add</button>
+<button class="add" type="button" (click)="createRow()">Add</button>
 
 <table *ngIf="items.length > 0">
     <thead>
         <th>#</th>
         <th>Name</th>
         <th>Age</th>
+        <th>&nbsp;</th>
     </thead>
     <tbody>
-        <tr *ngFor="let item of items" (click)="removeRow(item)">
+        <tr *ngFor="let item of items">
             <td>{{item.id}}</td>
             <td>{{item.name}}</td>
             <td>{{item.age}}</td>
+            <td>
+                <button type="button" (click)="removeRow(item, $event)">X</button>
+            </td>
         </tr>
     </tbody>
 </table>

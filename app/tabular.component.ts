@@ -29,10 +29,11 @@ export class TabularComponent implements OnInit {
     }
 
     createRow() {
+
         var obj: Object = {
             id: null,
             name: 'Hola ' + Math.random(),
-            age: 99
+            age: Math.floor(Math.random() * 100) % 100
         }
 
         this.dataService
@@ -41,7 +42,9 @@ export class TabularComponent implements OnInit {
         ;
     }
 
-    removeRow(item:Object) {
+    removeRow(item:Object, event:any) {
+
+        event.stopPropagation();
 
         this.dataService
             .delete(item)
