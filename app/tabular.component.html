@@ -10,9 +10,10 @@
     <tbody>
         <tr *ngFor="let item of items">
             <td>{{item.id}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.age}}</td>
+            <td><input id="name-{{item.id}}" type="text" value="{{item.name}}"/></td>
+            <td><input id="age-{{item.id}}" type="number" value="{{item.age}}"/></td>
             <td>
+                <button type="button" (click)="updateRow()">U</button>
                 <button type="button" (click)="removeRow(item, $event)">X</button>
             </td>
         </tr>

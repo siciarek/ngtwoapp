@@ -7,7 +7,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class DataService {
 
-    private serviceUrl = 'source/data.php';  // URL to web api
+    private serviceUrl = 'api/service.php';  // URL to web api
 
     constructor(private http: Http) { }
 
@@ -35,6 +35,19 @@ export class DataService {
             .catch(this.handleError);
     }
 
+    update(item: Object) {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        let url = `${this.serviceUrl}/${item.id}`;
+
+        return this.http
+            .put(url, JSON.stringify(item), {headers: headers})
+            .toPromise()
+            .then(() => item)
+            .catch(this.handleError);
+    }
+
     delete(item: Object) {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
@@ -50,18 +63,6 @@ export class DataService {
 /*
 
     // Update existing Hero
-    private put(hero: Hero) {
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/json');
-
-      let url = `${this.heroesUrl}/${hero.id}`;
-
-      return this.http
-                 .put(url, JSON.stringify(hero), {headers: headers})
-                 .toPromise()
-                 .then(() => hero)
-                 .catch(this.handleError);
-    }
 */
 
     private handleError(error: any) {

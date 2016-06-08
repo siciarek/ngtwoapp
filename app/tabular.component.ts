@@ -28,6 +28,24 @@ export class TabularComponent implements OnInit {
             ;
     }
 
+    updateRow() {
+
+        var id = 622;
+        var name = 'Fikander';
+        var age = 66;
+
+        var obj: Object = {
+            id: id,
+            name: name,
+            age: age
+        }
+
+        this.dataService
+            .update(obj)
+            .then(this.reset())
+        ;
+    }
+
     createRow() {
 
         var obj: Object = {
