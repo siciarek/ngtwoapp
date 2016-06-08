@@ -22,7 +22,7 @@ export class DataService {
     getItem(id: number) {
 
         return this.getList()
-                 .then(items => items.filter(item => item.id === id)[0]);
+            .then(items => items.filter(item => item.id === id).pop());
     }
 
     private create(item: Object): Promise<Object> {
@@ -59,11 +59,6 @@ export class DataService {
             .toPromise()
             .catch(this.handleError);
     }
-
-/*
-
-    // Update existing Hero
-*/
 
     private handleError(error: any) {
         console.error('An error occurred', error);
