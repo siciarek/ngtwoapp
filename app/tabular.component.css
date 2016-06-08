@@ -1,3 +1,7 @@
 table thead {
     color: #333;
 }
+
+table td {
+    cursor: pointer;
+}

@@ -25,7 +25,6 @@ export class DataService {
                  .then(items => items.filter(item => item.id === id)[0]);
     }
 
-    // Create item
     private create(item: Object): Promise<Object> {
         let headers = new Headers({ 'Content-Type': 'application/json' });
 
@@ -36,19 +35,19 @@ export class DataService {
             .catch(this.handleError);
     }
 
-/*
-    delete(hero: Hero) {
-      let headers = new Headers();
-      headers.append('Content-Type', 'application/json');
+    delete(item: Object) {
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
 
-      let url = `${this.heroesUrl}/${hero.id}`;
+        let url = `${this.serviceUrl}/${item.id}`;
 
-      return this.http
-                 .delete(url, headers)
-                 .toPromise()
-                 .catch(this.handleError);
+        return this.http
+            .delete(url, headers)
+            .toPromise()
+            .catch(this.handleError);
     }
 
+/*
 
     // Update existing Hero
     private put(hero: Hero) {

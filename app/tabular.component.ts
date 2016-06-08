@@ -16,8 +16,36 @@ export class TabularComponent implements OnInit {
     constructor(private dataService: DataService) {}
 
     ngOnInit() {
+
+        this.reset();
+    }
+
+    reset() {
+
         this.dataService
             .getList()
-            .then(items => this.items = items);
+            .then(items => this.items = items)
+            ;
     }
+
+    createRow() {
+        var obj: Object = {
+            id: null,
+            name: 'Hola ' + Math.random(),
+            age: 99
+        }
+
+        this.dataService
+            .create(obj)
+            .then(this.reset())
+        ;
+    }
+
+    removeRow(item:Object) {
+
+        this.dataService
+            .delete(item)
+            .then(this.reset());
+    }
+
 }

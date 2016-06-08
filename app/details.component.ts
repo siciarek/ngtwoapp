@@ -18,14 +18,6 @@ export class DetailsComponent implements OnInit {
 
     ngOnInit() {
 
-        var obj: Object = {
-            id: null,
-            name: 'Kazzanka',
-            age: 99
-        }
-
-        this.dataService.create(obj);
-
         this.dataService
             .getItem(this.id)
             .then(item => this.item = item);

@@ -6,26 +6,6 @@
     "data": {
         "items": [
             {
-                "id": 121,
-                "name": "Bisson",
-                "age": 37
-            },
-            {
-                "id": 622,
-                "name": "Ebirah",
-                "age": 45
-            },
-            {
-                "id": 132,
-                "name": "Sokol Millenium",
-                "age": 45
-            },
-            {
-                "id": 324,
-                "name": "Sokol Maltanski",
-                "age": 15
-            },
-            {
                 "id": 544,
                 "name": "Barbarella",
                 "age": 25
@@ -34,41 +14,6 @@
                 "id": 421,
                 "name": "Aspargun",
                 "age": 25
-            },
-            {
-                "id": 731,
-                "name": "Megalimb",
-                "age": 88
-            },
-            {
-                "id": 345,
-                "name": "Kazzanka",
-                "age": 99
-            },
-            {
-                "id": 345,
-                "name": "Kazzanka",
-                "age": 99
-            },
-            {
-                "id": 4810,
-                "name": "Kazzanka",
-                "age": 99
-            },
-            {
-                "id": 6521,
-                "name": "Kazzanka",
-                "age": 99
-            },
-            {
-                "id": 3788,
-                "name": "Kazzanka",
-                "age": 99
-            },
-            {
-                "id": 5783,
-                "name": "Kazzanka",
-                "age": 99
             }
         ]
     }
