@@ -7,7 +7,7 @@
         "items": [
             {
                 "id": 870,
-                "enabled": false,
+                "enabled": true,
                 "gender": "unknown",
                 "firstName": null,
                 "lastName": null,
@@ -15,7 +15,7 @@
                 "email": null,
                 "info": null,
                 "createdAt": "2016-06-09 14:40:21",
-                "updatedAt": "2016-06-09 14:40:21"
+                "updatedAt": "2016-06-09 15:11:07"
             },
             {
                 "id": 339,
