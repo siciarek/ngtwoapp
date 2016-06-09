@@ -1,5 +1,5 @@
 <?php
 
-define('SOURCE', 'data');
+define('SOURCE', 'person');
 
 include_once __DIR__ . '/rest.php';

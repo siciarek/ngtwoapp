@@ -1,0 +1,22 @@
+{
+    "success": true,
+    "type": "data",
+    "datetime": "1966-10-21 15:10:00",
+    "msg": "Data",
+    "data": {
+        "items": [
+            {
+                "id": 731,
+                "enabled": true,
+                "gender": "male",
+                "firstName": "Jerry",
+                "lastName": "Cosmo",
+                "dateOfBirth": "1966-10-21",
+                "email": "jcosmo@gmail.com",
+                "info": null,
+                "createdAt": "2016-01-01 15:10:00",
+                "updatedAt": "2016-01-01 15:10:00"
+            }
+        ]
+    }
+}

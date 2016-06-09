@@ -34,10 +34,12 @@ export class TabularComponent implements OnInit {
             id: id,
             name: document.getElementById('name-' + id).value,
             age: document.getElementById('age-' + id).value
-        }
+        };
 
         this.dataService
             .update(obj)
+            .then(this.reset())
+            .then(this.reset())
             .then(this.reset())
         ;
     }
@@ -46,12 +48,14 @@ export class TabularComponent implements OnInit {
 
         var obj: Object = {
             id: null,
-            name: 'Hola ' + Math.random(),
-            age: Math.floor(Math.random() * 100) % 100
+            name: null,
+            age: 0
         }
 
         this.dataService
             .create(obj)
+            .then(this.reset())
+            .then(this.reset())
             .then(this.reset())
         ;
     }
@@ -62,6 +66,8 @@ export class TabularComponent implements OnInit {
 
         this.dataService
             .delete(item)
+            .then(this.reset())
+            .then(this.reset())
             .then(this.reset());
     }
 
