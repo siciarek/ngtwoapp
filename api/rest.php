@@ -28,14 +28,19 @@ elseif($_SERVER['REQUEST_METHOD'] === 'POST') {
     } while (count($temp) > 0);
 
     $obj['id'] = $id;
+    $obj['createdAt'] = date('Y-m-d H:i:s');
+    $obj['updatedAt'] = $obj['createdAt'];
 
     array_unshift($data['data']['items'], $obj);
 }
 elseif($_SERVER['REQUEST_METHOD'] === 'PUT') {
 
+    $obj['updatedAt'] = date('Y-m-d H:i:s');
+
     $data['data']['items'] = array_map(function($e) use ($id, $obj) {
         return $id === $e['id'] ? $obj : $e;
     }, $data['data']['items']);
+
 }
 elseif($_SERVER['REQUEST_METHOD'] === 'DELETE') {
 

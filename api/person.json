@@ -6,16 +6,52 @@
     "data": {
         "items": [
             {
-                "id": 731,
+                "id": 601,
                 "enabled": true,
-                "gender": "male",
-                "firstName": "Jerry",
-                "lastName": "Cosmo",
-                "dateOfBirth": "1966-10-21",
-                "email": "jcosmo@gmail.com",
+                "gender": "unknown",
+                "firstName": null,
+                "lastName": null,
+                "dateOfBirth": null,
+                "email": null,
                 "info": null,
-                "createdAt": "2016-01-01 15:10:00",
-                "updatedAt": "2016-01-01 15:10:00"
+                "createdAt": "2016-06-09 14:31:11",
+                "updatedAt": "2016-06-09 14:31:17"
+            },
+            {
+                "id": 519,
+                "enabled": false,
+                "gender": "unknown",
+                "firstName": null,
+                "lastName": null,
+                "dateOfBirth": null,
+                "email": null,
+                "info": null,
+                "createdAt": "2016-06-09 14:30:35",
+                "updatedAt": "2016-06-09 14:30:35"
+            },
+            {
+                "id": 433,
+                "enabled": true,
+                "gender": "unknown",
+                "firstName": null,
+                "lastName": null,
+                "dateOfBirth": null,
+                "email": null,
+                "info": null,
+                "createdAt": "2016-06-09 14:29:39",
+                "updatedAt": "2016-06-09 14:29:39"
+            },
+            {
+                "id": 735,
+                "enabled": true,
+                "gender": "unknown",
+                "firstName": null,
+                "lastName": null,
+                "dateOfBirth": null,
+                "email": null,
+                "info": null,
+                "createdAt": "2016-06-09 14:29:03",
+                "updatedAt": "2016-06-09 14:29:03"
             }
         ]
     }
