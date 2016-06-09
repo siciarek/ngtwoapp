@@ -16,7 +16,7 @@ export class PersonComponent implements OnInit {
     enabled: boolean[] = [true, false];
     gender: string[] = ['unknown', 'male', 'female'];
 
-    items: Object[] = [];
+    items: Person[] = [];
 
     constructor(private dataService: PersonService) {}
 
@@ -33,18 +33,6 @@ export class PersonComponent implements OnInit {
             ;
     }
 
-    updateRow(item:Person) {
-
-        item.enabled = ((item.enabled == 'true') || (item.enabled == true));
-
-        this.dataService
-            .update(item)
-            .then(this.reset())
-            .then(this.reset())
-            .then(this.reset())
-        ;
-    }
-
     createRow() {
 
         var item: Person = new Person();
@@ -57,15 +45,26 @@ export class PersonComponent implements OnInit {
         ;
     }
 
-    removeRow(item:Person) {
+    updateRow(item:Person) {
 
-        event.stopPropagation();
+        item.enabled = ((item.enabled == 'true') || (item.enabled == true));
+
+        this.dataService
+            .update(item)
+            .then(this.reset())
+            .then(this.reset())
+            .then(this.reset())
+        ;
+    }
+
+    removeRow(item:Person) {
 
         this.dataService
             .delete(item)
             .then(this.reset())
             .then(this.reset())
-            .then(this.reset());
+            .then(this.reset())
+            ;
     }
 
 }

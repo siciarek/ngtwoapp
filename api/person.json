@@ -6,19 +6,7 @@
     "data": {
         "items": [
             {
-                "id": 601,
-                "enabled": true,
-                "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
-                "dateOfBirth": null,
-                "email": null,
-                "info": null,
-                "createdAt": "2016-06-09 14:31:11",
-                "updatedAt": "2016-06-09 14:31:17"
-            },
-            {
-                "id": 519,
+                "id": 870,
                 "enabled": false,
                 "gender": "unknown",
                 "firstName": null,
@@ -26,24 +14,24 @@
                 "dateOfBirth": null,
                 "email": null,
                 "info": null,
-                "createdAt": "2016-06-09 14:30:35",
-                "updatedAt": "2016-06-09 14:30:35"
+                "createdAt": "2016-06-09 14:40:21",
+                "updatedAt": "2016-06-09 14:40:21"
             },
             {
-                "id": 433,
-                "enabled": true,
+                "id": 339,
+                "enabled": false,
                 "gender": "unknown",
                 "firstName": null,
                 "lastName": null,
                 "dateOfBirth": null,
                 "email": null,
                 "info": null,
-                "createdAt": "2016-06-09 14:29:39",
-                "updatedAt": "2016-06-09 14:29:39"
+                "createdAt": "2016-06-09 14:40:19",
+                "updatedAt": "2016-06-09 14:40:19"
             },
             {
                 "id": 735,
-                "enabled": true,
+                "enabled": false,
                 "gender": "unknown",
                 "firstName": null,
                 "lastName": null,
@@ -51,7 +39,7 @@
                 "email": null,
                 "info": null,
                 "createdAt": "2016-06-09 14:29:03",
-                "updatedAt": "2016-06-09 14:29:03"
+                "updatedAt": "2016-06-09 14:36:03"
             }
         ]
     }
