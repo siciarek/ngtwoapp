@@ -1,7 +1,7 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-10 13:51:58.187195",
+    "datetime": "2016-06-10 14:10:01.673715",
     "msg": "Data",
     "data": {
         "items": [
@@ -15,7 +15,7 @@
                 "email": "siciarek@gmail.com",
                 "info": null,
                 "createdAt": "2016-06-10 10:18:27",
-                "updatedAt": "2016-06-10 13:51:07"
+                "updatedAt": "2016-06-10 14:00:07"
             }
         ]
     }

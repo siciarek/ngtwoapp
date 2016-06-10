@@ -49,7 +49,10 @@ export class PersonComponent implements OnInit {
 
         this.dataService
             .update(item)
-            .catch(this.reset())
+            .catch(err => {
+                console.log(err);
+                this.reset();
+            })
             ;
         ;
     }
