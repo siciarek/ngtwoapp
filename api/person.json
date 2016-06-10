@@ -1,33 +1,21 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-10 13:44:18.686216",
+    "datetime": "2016-06-10 13:51:58.187195",
     "msg": "Data",
     "data": {
         "items": [
             {
                 "id": 912,
                 "enabled": true,
-                "gender": "unknown",
+                "gender": "male",
                 "firstName": "Jacek",
                 "lastName": "Siciarek",
                 "dateOfBirth": "1966-10-21",
                 "email": "siciarek@gmail.com",
                 "info": null,
                 "createdAt": "2016-06-10 10:18:27",
-                "updatedAt": "2016-06-10 13:24:26"
-            },
-            {
-                "id": 385,
-                "enabled": true,
-                "gender": "male",
-                "firstName": "Mariola",
-                "lastName": "Kollola",
-                "dateOfBirth": null,
-                "email": "mkol@gmail.comsss",
-                "info": null,
-                "createdAt": "2016-06-10 08:35:57",
-                "updatedAt": "2016-06-10 13:41:32"
+                "updatedAt": "2016-06-10 13:51:07"
             }
         ]
     }
