@@ -40,8 +40,6 @@ export class PersonComponent implements OnInit {
         this.dataService
             .create(item)
             .then(this.reset())
-            .then(this.reset())
-            .then(this.reset())
         ;
     }
 
@@ -51,9 +49,8 @@ export class PersonComponent implements OnInit {
 
         this.dataService
             .update(item)
-            .then(this.reset())
-            .then(this.reset())
-            .then(this.reset())
+            .catch(this.reset())
+            ;
         ;
     }
 
@@ -61,8 +58,6 @@ export class PersonComponent implements OnInit {
 
         this.dataService
             .delete(item)
-            .then(this.reset())
-            .then(this.reset())
             .then(this.reset())
             ;
     }

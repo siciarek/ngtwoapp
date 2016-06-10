@@ -1,45 +1,33 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "1966-10-21 15:10:00",
+    "datetime": "2016-06-10 13:44:18.686216",
     "msg": "Data",
     "data": {
         "items": [
             {
-                "id": 870,
+                "id": 912,
                 "enabled": true,
                 "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
-                "dateOfBirth": null,
-                "email": null,
+                "firstName": "Jacek",
+                "lastName": "Siciarek",
+                "dateOfBirth": "1966-10-21",
+                "email": "siciarek@gmail.com",
                 "info": null,
-                "createdAt": "2016-06-09 14:40:21",
-                "updatedAt": "2016-06-09 15:11:07"
+                "createdAt": "2016-06-10 10:18:27",
+                "updatedAt": "2016-06-10 13:24:26"
             },
             {
-                "id": 339,
-                "enabled": false,
-                "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
+                "id": 385,
+                "enabled": true,
+                "gender": "male",
+                "firstName": "Mariola",
+                "lastName": "Kollola",
                 "dateOfBirth": null,
-                "email": null,
+                "email": "mkol@gmail.comsss",
                 "info": null,
-                "createdAt": "2016-06-09 14:40:19",
-                "updatedAt": "2016-06-09 14:40:19"
-            },
-            {
-                "id": 735,
-                "enabled": false,
-                "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
-                "dateOfBirth": null,
-                "email": null,
-                "info": null,
-                "createdAt": "2016-06-09 14:29:03",
-                "updatedAt": "2016-06-09 14:36:03"
+                "createdAt": "2016-06-10 08:35:57",
+                "updatedAt": "2016-06-10 13:41:32"
             }
         ]
     }
