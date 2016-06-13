@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
+import { DashboardComponent } from './dashboard.component';
 import { PersonComponent } from './person.component';
 
 @Component({
@@ -15,7 +16,17 @@ import { PersonComponent } from './person.component';
     ]
 })
 @RouteConfig([
-    { path: '/person',  name: 'Person', component: PersonComponent, useAsDefault: true },
+    {
+        path: '/',
+        name: 'Dashboard',
+        component: DashboardComponent,
+        useAsDefault: true
+    },
+    {
+        path: '/person',
+        name: 'Person',
+        component: PersonComponent
+    }
 ])
 export class AppComponent {
 
