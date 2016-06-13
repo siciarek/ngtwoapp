@@ -52,12 +52,10 @@ elseif($_SERVER['REQUEST_METHOD'] === 'DELETE') {
     $data['data']['items'] = array_values($temp);
 }
 
-$t = microtime(true);
-$micro = sprintf("%06d",($t - floor($t)) * 1000000);
-$now = date('Y-m-d H:i:s.'.$micro);
+$now = date('Y-m-d H:i:s');
+$data['datetime'] = $now;
 
 if($_SERVER['REQUEST_METHOD'] !== 'GET') {
-    $data['datetime'] = $now;
     $newcontent = json_encode($data, 128);
 
     file_put_contents($datafile, $newcontent, LOCK_EX);

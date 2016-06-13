@@ -1,58 +1,10 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-12 19:48:04.010761",
+    "datetime": "2016-06-13 07:39:44",
     "msg": "Data",
     "data": {
         "items": [
-            {
-                "id": 550,
-                "enabled": false,
-                "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
-                "dateOfBirth": null,
-                "email": null,
-                "info": null,
-                "createdAt": "2016-06-12 19:48:04",
-                "updatedAt": "2016-06-12 19:48:04"
-            },
-            {
-                "id": 804,
-                "enabled": false,
-                "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
-                "dateOfBirth": null,
-                "email": null,
-                "info": null,
-                "createdAt": "2016-06-12 19:48:03",
-                "updatedAt": "2016-06-12 19:48:03"
-            },
-            {
-                "id": 407,
-                "enabled": false,
-                "gender": "unknown",
-                "firstName": null,
-                "lastName": null,
-                "dateOfBirth": null,
-                "email": null,
-                "info": null,
-                "createdAt": "2016-06-12 19:48:02",
-                "updatedAt": "2016-06-12 19:48:02"
-            },
-            {
-                "id": 45,
-                "enabled": true,
-                "gender": "unknown",
-                "firstName": "Maria",
-                "lastName": "Konieczny",
-                "dateOfBirth": "1973-11-11",
-                "email": "mkonieczny@wp.pl",
-                "info": null,
-                "createdAt": "2016-06-10 16:44:05",
-                "updatedAt": "2016-06-12 19:46:42"
-            },
             {
                 "id": 912,
                 "enabled": true,

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+
+// https://angular.io/docs/ts/latest/guide/router-deprecated.html
 
 import { DashboardComponent } from './dashboard.component';
 import { PersonComponent } from './person.component';
