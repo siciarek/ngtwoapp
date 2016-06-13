@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, provide } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
@@ -15,7 +15,8 @@ import { PersonComponent } from './person.component';
         ROUTER_DIRECTIVES
     ],
     providers: [
-        ROUTER_PROVIDERS
+        ROUTER_PROVIDERS,
+        provide( LocationStrategy, { useClass: HashLocationStrategy} ) // .../#/person
     ]
 })
 @RouteConfig([
