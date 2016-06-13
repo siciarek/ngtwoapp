@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { TabularComponent } from './tabular.component';
-import { ListComponent } from './list.component';
-import { DetailsComponent } from './details.component';
+import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+
 import { PersonComponent } from './person.component';
 
 @Component({
@@ -9,12 +8,15 @@ import { PersonComponent } from './person.component';
     templateUrl: 'app/app.component.html',
     styleUrls: ['app/app.component.css'],
     directives: [
-        PersonComponent,
-        DetailsComponent,
-        ListComponent,
-        TabularComponent
+        ROUTER_DIRECTIVES
+    ],
+    providers: [
+        ROUTER_PROVIDERS
     ]
 })
+@RouteConfig([
+    { path: '/person',  name: 'Person', component: PersonComponent, useAsDefault: true },
+])
 export class AppComponent {
-    title: string = 'Dummy';
+
 }

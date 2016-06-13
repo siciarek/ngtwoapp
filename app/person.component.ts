@@ -12,7 +12,6 @@ import { PersonService } from './person.service';
     ]
 })
 export class PersonComponent implements OnInit {
-    title: string = 'Person List';
     enabled: boolean[] = [true, false];
     gender: string[] = ['unknown', 'male', 'female'];
 
