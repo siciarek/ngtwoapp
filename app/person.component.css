@@ -7,8 +7,3 @@ td, th {
     border: 1px solid black;
     padding: 3px 8px;
 }
-
-button.add {
-    display: block;
-    margin-bottom: 16px
-}

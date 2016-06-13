@@ -1,5 +1,5 @@
 
-<button class="add" type="button" (click)="createRow()">Add</button>
+
 
 <form *ngIf="items.length > 0" #f=ngForm>
     <table>
@@ -14,7 +14,9 @@
             <th>Info</th>
             <th>Created At</th>
             <th>Updated At</th>
-            <th>&nbsp;</th>
+            <th>
+                <button class="add" type="button" (click)="createRow()">Add</button>
+            </th>
         </thead>
         <tbody>
             <tr *ngFor="let item of items">
@@ -48,4 +50,5 @@
 
 <div *ngIf="items.length === 0" class="alert alert-warning">
     List is empty.
+    <button class="add" type="button" (click)="createRow()">Add</button>
 </div>
