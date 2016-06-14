@@ -1,13 +1,13 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-13 21:46:15",
+    "datetime": "2016-06-13 22:49:58",
     "msg": "Data",
     "data": {
         "items": [
             {
                 "id": 912,
-                "enabled": true,
+                "enabled": false,
                 "gender": "male",
                 "firstName": "Jacek",
                 "lastName": "Siciarek",
@@ -15,7 +15,7 @@
                 "email": "siciarek@gmail.com",
                 "info": null,
                 "createdAt": "2016-06-10 10:18:27",
-                "updatedAt": "2016-06-10 14:00:07"
+                "updatedAt": "2016-06-13 22:49:58"
             }
         ]
     }
