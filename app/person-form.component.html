@@ -1,15 +1,16 @@
-<form *ngIf="item" (ngSubmit)="onSubmit()">
+<form *ngIf="item" (ngSubmit)="onSubmit()" [ngFormModel]="form">
     <h1>Person #{{item.id}}</h1>
     <input type="checkbox" [(ngModel)]="item.enabled"/><br/>
     <select [(ngModel)]="item.gender">
         <option *ngFor="let o of gender" [value]="o">{{o}}</option>
     </select><br/>
-    <input [(ngModel)]="item.firstName"/><br/>
-    <input [(ngModel)]="item.lastName"/><br/>
-    <input [(ngModel)]="item.dateOfBirth"/><br/>
+    <input [(ngModel)]="item.firstName" ngControl="firstName"/><br/>
+    <input [(ngModel)]="item.lastName" ngControl="lastName"/><br/>
+    <input [(ngModel)]="item.dateOfBirth" /><br/>
     <input type="email" [(ngModel)]="item.email"/><br/>
     <textarea [(ngModel)]="item.info"></textarea><br/>
-    <button>Submit</button>
+
+    <button [disabled]="!form.valid">Submit</button>
 </form>
 
 <div class="alert alert-warning" [hidden]="item">
