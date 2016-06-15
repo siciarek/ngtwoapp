@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }            from '@angular/router-deprecated';
 
 import { Person } from './person';
 import { PersonService } from './person.service';
@@ -17,11 +18,15 @@ export class PersonComponent implements OnInit {
 
     items: Person[] = [];
 
-    constructor(private dataService: PersonService) {}
+    constructor(private dataService: PersonService, private router: Router) {}
 
     ngOnInit() {
 
         this.reset();
+    }
+
+    edit(item:Person) {
+        this.router.navigate(['PersonEdit', { id: item.id }]);
     }
 
     reset() {

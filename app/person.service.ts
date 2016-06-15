@@ -20,7 +20,7 @@ export class PersonService {
     }
 
     getItem(id: number) {
-        let url = `${this.serviceUrl}/${item.id}`;
+        let url = `${this.serviceUrl}/${id}`;
 
         return this.getList()
             .then(items => items.filter(item => item.id === id).pop());

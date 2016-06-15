@@ -1,21 +1,33 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-13 22:49:58",
+    "datetime": "2016-06-15 21:41:40",
     "msg": "Data",
     "data": {
         "items": [
             {
+                "id": 947,
+                "enabled": true,
+                "gender": "female",
+                "firstName": "Lucjan",
+                "lastName": "Komorka",
+                "dateOfBirth": "1978-04-12",
+                "email": "loco@gmail.com",
+                "info": "Bez bez bez.",
+                "createdAt": "2016-06-15 19:36:14",
+                "updatedAt": "2016-06-15 21:39:38"
+            },
+            {
                 "id": 912,
-                "enabled": false,
+                "enabled": true,
                 "gender": "male",
                 "firstName": "Jacek",
                 "lastName": "Siciarek",
                 "dateOfBirth": "1966-10-21",
                 "email": "siciarek@gmail.com",
-                "info": null,
+                "info": "Bim bam bom",
                 "createdAt": "2016-06-10 10:18:27",
-                "updatedAt": "2016-06-13 22:49:58"
+                "updatedAt": "2016-06-15 21:41:09"
             }
         ]
     }

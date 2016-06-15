@@ -6,6 +6,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { DashboardComponent } from './dashboard.component';
 import { PersonComponent } from './person.component';
+import { PersonFormComponent } from './person-form.component';
 
 @Component({
     selector: 'app',
@@ -30,6 +31,11 @@ import { PersonComponent } from './person.component';
         path: '/person',
         name: 'Person',
         component: PersonComponent
+    },
+    {
+        path: '/person/:id/edit',
+        name: 'PersonEdit',
+        component: PersonFormComponent
     }
 ])
 export class AppComponent {
