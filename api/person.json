@@ -1,7 +1,7 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-15 22:42:03",
+    "datetime": "2016-06-15 22:47:09",
     "msg": "Data",
     "data": {
         "items": [
@@ -27,7 +27,7 @@
                 "email": "siciarek@gmail.com",
                 "info": "Bim bam bom",
                 "createdAt": "2016-06-10 10:18:27",
-                "updatedAt": "2016-06-15 22:42:03"
+                "updatedAt": "2016-06-15 22:47:09"
             }
         ]
     }
