@@ -1,4 +1,4 @@
-import {Control} from '@angular/common';
+import { Control } from '@angular/common';
 
 export class CustomValidators {
 
@@ -10,10 +10,8 @@ export class CustomValidators {
 
         let PESEL_REGEXP = new RegExp('^\\d{11}$');
 
-        return PESEL_REGEXP.test(c.value) ? null : {
-            pesel: {
-                valid: false
-            }
-        };
+        return PESEL_REGEXP.test(c.value)
+            ? null
+            : { pesel: { valid: false } };
     }
 }
