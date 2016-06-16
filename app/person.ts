@@ -5,6 +5,7 @@ export class Person {
     firstName: string = null;
     lastName: string = null;
     dateOfBirth: string = null;
+    pesel: string = null;
     email: string = null;
     info: string = null;
     createdAt: string = null;

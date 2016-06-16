@@ -1,20 +1,18 @@
 import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
-import {
-	FormBuilder,
-	Validators,
-	ControlGroup,
-	FORM_DIRECTIVES
-} from '@angular/common';
+import { FormBuilder, Validators, ControlGroup, FORM_DIRECTIVES } from '@angular/common';
 import { RouteParams } from '@angular/router-deprecated';
 
 import { Person } from './person';
 import { PersonService } from './person.service';
+import { CustomValidators } from './custom-validators';
 
 @Component({
     selector: 'person-form',
     templateUrl: 'app/person-form.component.html',
     styleUrls: ['app/person-form.component.css'],
-    directives: [FORM_DIRECTIVES],
+    directives: [
+        FORM_DIRECTIVES
+    ],
     providers: [
         PersonService
     ]
@@ -22,11 +20,9 @@ import { PersonService } from './person.service';
 export class PersonFormComponent implements OnInit {
     @Input item: Person;
     @Output() close = new EventEmitter();
-
-    gender: string[] = ['unknown', 'male', 'female'];
-
-    error: any;
     form: ControlGroup;
+    gender: string[] = ['unknown', 'male', 'female'];
+    error: any;
 
     constructor(
         private fb: FormBuilder,
@@ -37,8 +33,17 @@ export class PersonFormComponent implements OnInit {
     ngOnInit() {
 
         this.form = this.fb.group({
-            firstName:  ['', Validators.compose([Validators.required, Validators.minLength(2)])],
-            lastName:  ['', Validators.compose([Validators.required, Validators.minLength(1)])]
+            firstName:  ['', Validators.compose([
+                Validators.required,
+                Validators.minLength(2)
+            ])],
+            lastName:  ['', Validators.compose([
+                Validators.required,
+                Validators.minLength(1)
+            ])],
+            pesel:  ['', Validators.compose([
+                CustomValidators.pesel
+            ])]
         });
 
         if (this.routeParams.get('id') !== null && !isNaN(this.routeParams.get('id'))) {
