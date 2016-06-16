@@ -11,7 +11,7 @@ export class CustomValidators {
         let PESEL_REGEXP = new RegExp('^\\d{11}$');
 
         return PESEL_REGEXP.test(c.value) ? null : {
-            validatePesel: {
+            pesel: {
                 valid: false
             }
         };
