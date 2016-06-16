@@ -4,10 +4,7 @@ export class CustomValidators {
 
     static pesel(c: Control) {
 
-        let val = c.value.trim();
-        val = val.length === 0 ? null : val;
-
-        if(val === null) {
+        if(c.value === null || c.value.length === 0) {
             return null;
         }
 
