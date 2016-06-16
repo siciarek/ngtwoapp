@@ -25,7 +25,7 @@
                 "firstName": "Jacek",
                 "lastName": "Siciarek",
                 "dateOfBirth": "1966-10-21",
-                "pesel": "66102101357",
+                "pesel": null,
                 "email": "siciarek@gmail.com",
                 "info": "Bim bam bom",
                 "createdAt": "2016-06-10 10:18:27",
