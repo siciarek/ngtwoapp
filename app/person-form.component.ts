@@ -1,10 +1,12 @@
-import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, Validators, ControlGroup, FORM_DIRECTIVES } from '@angular/common';
 import { RouteParams } from '@angular/router-deprecated';
 
 import { Person } from './person';
 import { PersonService } from './person.service';
 import { CustomValidators } from './custom-validators';
+
+declare var jQuery:any;
 
 @Component({
     selector: 'person-form',
@@ -18,6 +20,7 @@ import { CustomValidators } from './custom-validators';
     ]
 })
 export class PersonFormComponent implements OnInit {
+
     @Input item: Person;
     @Output() close = new EventEmitter();
     form: ControlGroup;
@@ -27,10 +30,19 @@ export class PersonFormComponent implements OnInit {
     constructor(
         private fb: FormBuilder,
         private dataService: PersonService,
-        private routeParams: RouteParams
-    ) {}
+        private routeParams: RouteParams,
+        private _elRef: ElementRef
+    ) {
+    }
 
-    ngOnInit() {
+    ngOnInit():any {
+        var el = jQuery(this._elRef.nativeElement);
+
+        console.log(jQuery(this._elRef.nativeElement).find('input').length);
+        //
+        // elfind('button.x').on('click', function(e){
+        //     alert('xxx');
+        // }); // .bootstrapSwitch();
 
         this.form = this.fb.group({
             firstName:  ['', Validators.compose([
@@ -41,9 +53,8 @@ export class PersonFormComponent implements OnInit {
                 Validators.required,
                 Validators.minLength(1)
             ])],
-            pesel:  ['', Validators.compose([
-                CustomValidators.pesel
-            ])]
+            gender:  ['', CustomValidators.gender],
+            pesel:  ['', CustomValidators.pesel]
         });
 
         if (this.routeParams.get('id') !== null && !isNaN(this.routeParams.get('id'))) {
@@ -53,9 +64,8 @@ export class PersonFormComponent implements OnInit {
                 .then(item => {
                     this.item = item;
                 });
-        } else {
-            this.router.navigate(['Person', {}]);
         }
+
     }
 
     onSubmit() {

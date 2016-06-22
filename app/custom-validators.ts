@@ -1,6 +1,15 @@
-import { Control } from '@angular/common';
+import { Control, Validators } from '@angular/common';
 
-export class CustomValidators {
+export class CustomValidators extends Validators {
+
+    static gender(c: Control) {
+
+        let gender: string[] = ['unknown', 'male', 'female'];
+
+        return (gender.indexOf(c.value) !== -1)
+            ? null
+            : { enum: { valid: false } };
+    }
 
     static pesel(c: Control) {
 

@@ -1,22 +1,22 @@
 {
     "success": true,
     "type": "data",
-    "datetime": "2016-06-16 07:31:03",
+    "datetime": "2016-06-17 16:41:14",
     "msg": "Data",
     "data": {
         "items": [
             {
                 "id": 947,
-                "enabled": false,
+                "enabled": true,
                 "gender": "male",
                 "firstName": "Lucjan",
-                "lastName": "Komorka",
+                "lastName": "Banieczko",
                 "dateOfBirth": "1978-04-12",
                 "pesel": "66102101357",
                 "email": "loco@gmail.com",
-                "info": "Bez bez bez.",
+                "info": "Za\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\nZa\u017c\u00f3\u0142\u0107 g\u0119\u015bl\u0105 ja\u017a\u0144.\n\n",
                 "createdAt": "2016-06-15 19:36:14",
-                "updatedAt": "2016-06-16 07:31:03"
+                "updatedAt": "2016-06-17 16:41:14"
             },
             {
                 "id": 912,

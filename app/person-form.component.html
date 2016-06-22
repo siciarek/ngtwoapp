@@ -1,17 +1,56 @@
-<form *ngIf="item" (ngSubmit)="onSubmit()" [ngFormModel]="form">
-    <h1>Person #{{item.id}}</h1>
-    <input type="checkbox" [(ngModel)]="item.enabled"/><br/>
-    <select [(ngModel)]="item.gender">
-        <option *ngFor="let o of gender" [value]="o">{{o}}</option>
-    </select><br/>
-    <input [(ngModel)]="item.firstName" ngControl="firstName"/><br/>
-    <input [(ngModel)]="item.lastName" ngControl="lastName"/><br/>
-    <input [(ngModel)]="item.pesel" ngControl="pesel"/><br/>
-    <input [(ngModel)]="item.dateOfBirth" /><br/>
-    <input type="email" [(ngModel)]="item.email"/><br/>
-    <textarea [(ngModel)]="item.info"></textarea><br/>
+<form *ngIf="item" [ngFormModel]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-lg-6">
 
-    <button [disabled]="!form.valid">Submit</button>
+            <div class="form-group">
+                <label>Gender</label>
+                <select [(ngModel)]="item.gender" class="form-control" ngControl="gender">
+                    <option *ngFor="let o of gender" [value]="o">{{o}}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input [(ngModel)]="item.firstName" ngControl="firstName" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input [(ngModel)]="item.lastName" ngControl="lastName" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label>PESEL</label>
+                <input [(ngModel)]="item.pesel" ngControl="pesel" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input [(ngModel)]="item.dateOfBirth" class="form-control"/>
+            </div>
+
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" [(ngModel)]="item.email" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="form-group">
+                <label>Info</label>
+                <textarea [(ngModel)]="item.info" rows="10" class="form-control"></textarea>
+            </div>
+
+            <input type="checkbox" [(ngModel)]="item.enabled" id="enabled"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <button class="x">X</button>
+            <button [disabled]="!form.valid" class="btn btn-success btn-lg pull-right">Submit</button>
+        </div>
+    </div>
 </form>
 
 <div class="alert alert-warning" [hidden]="item">
