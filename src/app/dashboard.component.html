@@ -1,1 +1,26 @@
-<h3>Dashboard</h3>
+<form>
+    <table>
+        <tr>
+            <td>
+                <md-input placeholder="First Name" [(ngModel)]="person.firstName"></md-input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <md-input maxlength="10" placeholder="Last Name" [(ngModel)]="person.lastName"></md-input>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <md-checkbox [(ngModel)]="person.enabled">Enabled</md-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br/>
+                <button md-raised-button class="md-primary">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+

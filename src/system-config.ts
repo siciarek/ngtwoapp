@@ -7,6 +7,7 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+    'ng2-material': 'vendor/ng2-material',
     '@angular2-material': 'vendor/@angular2-material'
 };
 
@@ -23,6 +24,9 @@ const materialPkgs:string[] = [
 materialPkgs.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
+
+packages[`ng2-material`] = {main: `index.js`};
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
