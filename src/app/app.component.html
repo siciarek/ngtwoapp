@@ -43,16 +43,25 @@
                     <br/>
 
                     <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth"
-                              required="true" maxLength="10" minLength="10"></md-input>
+                              required="true" maxLength="10" minLength="10">
+                    </md-input>
 
                     <br/>
 
                     <md-input [(ngModel)]="item.pesel" placeholder="PESEL"
-                              maxLength="11" minLength="11"></md-input>
+                              maxLength="11" minLength="11" #pesel>
+                        <md-hint align="end">{{pesel.characterCount}} / 11</md-hint>
+                    </md-input>
 
                     <br/>
 
                     <md-input [(ngModel)]="item.email" placeholder="E-mail" type="email" required="true"></md-input>
+
+                    <br/>
+
+                    <md-input [(ngModel)]="item.info" placeholder="Info"
+                              rows="5"
+                              maxLength="255"></md-input>
 
                     <br/>
 
