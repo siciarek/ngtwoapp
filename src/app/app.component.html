@@ -12,22 +12,14 @@
             <md-card-content>
                 <form>
 
-                    <md-switch class="md-primary" [(checked)]="item.enabled" ng-true-value="true" ng-false-value="false">Enabled</md-switch>
-                    <br/>
-
-                    <!--
-                    <md-checkbox
-                    (checked)="item.enabled"
-                    (mouseup)="item.enabled = !item.enabled"
-                    ng-true-value="true"
-                    ng-false-value="false">Enabled</md-checkbox>
+                    <md-checkbox [checked]="item.enabled" (change)="item.enabled = !item.enabled">Enabled</md-checkbox>
 
                     <br/>
                     <br/>
-                    -->
 
                     <md-radio-group [(ngModel)]="item.gender">
                         <md-radio-button value="male">Male</md-radio-button>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <md-radio-button value="female">Female</md-radio-button>
                     </md-radio-group>
 
