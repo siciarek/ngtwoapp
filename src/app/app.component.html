@@ -12,7 +12,7 @@
             <md-card-content>
                 <form>
 
-                    <md-switch [(checked)]="item.enabled" ng-true-value="true" ng-false-value="false">Enabled</md-switch>
+                    <md-switch class="md-primary" [(checked)]="item.enabled" ng-true-value="true" ng-false-value="false">Enabled</md-switch>
                     <br/>
 
                     <!--
@@ -42,8 +42,13 @@
 
                     <br/>
 
-                    <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth" type="date"
+                    <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth"
                               required="true" maxLength="10" minLength="10"></md-input>
+
+                    <br/>
+
+                    <md-input [(ngModel)]="item.pesel" placeholder="PESEL"
+                              maxLength="11" minLength="11"></md-input>
 
                     <br/>
 
@@ -59,25 +64,17 @@
 
     <div flex="50" layout="column" flex-xs="100">
         <md-card>
+
+            <md-toolbar-layout>
+                <md-toolbar color="primary">
+                    <i md-icon>code</i>&nbsp;
+                    Data
+                </md-toolbar>
+            </md-toolbar-layout>
             <md-card-content>
                 <pre>{{ item | json }}</pre>
             </md-card-content>
         </md-card>
-
-        <md-card  *ngIf="item.enabled">
-            <md-toolbar-layout>
-                <md-toolbar color="accent">
-                    <i md-icon>face</i>&nbsp;
-                    Message
-                </md-toolbar>
-            </md-toolbar-layout>
-
-            <md-card-content>
-                Enabled option is set.
-            </md-card-content>
-        </md-card>
-
-
     </div>
 
 </md-content>
