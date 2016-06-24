@@ -16,18 +16,18 @@ const packages: any = {
 };
 
 
-packages[`ng2-material`] = {main: `index.js`};
 
 // put the names of any of your Material components here
 const materialPkgs:string[] = [
   'core', 'toolbar', 'button', 'sidenav', 'list', 'card',
-  'input', 'checkbox', 'radio', 'icon'
+  'input', 'checkbox', 'radio', 'icon', 'progress-circle', 'tabs'
 ];
 
 materialPkgs.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
 
+packages[`ng2-material`] = {main: `index.js`};
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

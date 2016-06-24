@@ -1,10 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 import {FORM_DIRECTIVES} from '@angular/common';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MATERIAL_DIRECTIVES} from 'ng2-material';
 import {MdToolbar} from '@angular2-material/toolbar';
 import {MdRadioButton, MdRadioGroup, MdRadioDispatcher} from '@angular2-material/radio';
 import {MdCheckbox} from '@angular2-material/checkbox';
+import {MdSpinner, MdProgressCircle} from '@angular2-material/progress-circle';
 
 @Component({
     moduleId: module.id,
@@ -18,6 +19,8 @@ import {MdCheckbox} from '@angular2-material/checkbox';
         MATERIAL_DIRECTIVES,
         MD_INPUT_DIRECTIVES,
         FORM_DIRECTIVES,
+        MdSpinner,
+        MdProgressCircle,
         MdCheckbox,
         MdRadioButton,
         MdRadioGroup,
