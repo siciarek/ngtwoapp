@@ -7,13 +7,16 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-    'ng2-material': 'vendor/ng2-material',
+   'ng2-material': 'vendor/ng2-material',
     '@angular2-material': 'vendor/@angular2-material'
 };
 
 /** User packages configuration. */
 const packages: any = {
 };
+
+
+packages[`ng2-material`] = {main: `index.js`};
 
 // put the names of any of your Material components here
 const materialPkgs:string[] = [
@@ -25,7 +28,6 @@ materialPkgs.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
 
-packages[`ng2-material`] = {main: `index.js`};
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
