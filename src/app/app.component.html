@@ -3,8 +3,8 @@
     <div flex="50" layout="column" flex-xs="100">
         <md-card>
             <md-toolbar-layout>
-                <md-toolbar class="md-primary">
-                    <i md-icon>account_circle</i>&nbsp;
+                <md-toolbar color="primary">
+                    <i md-icon>face</i>&nbsp;
                     User #{{item.id}}
                 </md-toolbar>
             </md-toolbar-layout>
@@ -13,6 +13,18 @@
                 <form>
 
                     <md-switch [(checked)]="item.enabled" ng-true-value="true" ng-false-value="false">Enabled</md-switch>
+                    <br/>
+
+                    <!--
+                    <md-checkbox
+                    (checked)="item.enabled"
+                    (mouseup)="item.enabled = !item.enabled"
+                    ng-true-value="true"
+                    ng-false-value="false">Enabled</md-checkbox>
+
+                    <br/>
+                    <br/>
+                    -->
 
                     <md-radio-group [(ngModel)]="item.gender">
                         <md-radio-button value="male">Male</md-radio-button>
@@ -30,7 +42,8 @@
 
                     <br/>
 
-                    <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth" required="true" maxLength="10" minLength="10"></md-input>
+                    <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth" type="date"
+                              required="true" maxLength="10" minLength="10"></md-input>
 
                     <br/>
 
@@ -53,8 +66,8 @@
 
         <md-card  *ngIf="item.enabled">
             <md-toolbar-layout>
-                <md-toolbar class="md-warn">
-                    <i md-icon>account_circle</i>&nbsp;
+                <md-toolbar color="accent">
+                    <i md-icon>face</i>&nbsp;
                     Message
                 </md-toolbar>
             </md-toolbar-layout>
