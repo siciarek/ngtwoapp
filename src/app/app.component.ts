@@ -1,11 +1,15 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {FORM_DIRECTIVES} from '@angular/common';
+import {Component, ViewEncapsulation, OnInit} from '@angular/core';
+import {FormBuilder, Validators, ControlGroup, FORM_DIRECTIVES} from '@angular/common';
 import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
 import {MATERIAL_DIRECTIVES} from 'ng2-material';
 import {MdToolbar} from '@angular2-material/toolbar';
 import {MdRadioButton, MdRadioGroup, MdRadioDispatcher} from '@angular2-material/radio';
 import {MdCheckbox} from '@angular2-material/checkbox';
 import {MdSpinner, MdProgressCircle} from '@angular2-material/progress-circle';
+
+import { Person } from './person';
+import { PersonService } from './person.service';
+import { CustomValidators } from './custom-validators';
 
 @Component({
     moduleId: module.id,
@@ -27,22 +31,47 @@ import {MdSpinner, MdProgressCircle} from '@angular2-material/progress-circle';
         MdToolbar
     ],
     providers: [
+        PersonService,
         MdRadioDispatcher
     ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    form: ControlGroup;
     title: string = 'App';
-    item: Object =  {
-        "id": 912,
-        "enabled": true,
-        "gender": "male",
-        "firstName": "Jacek",
-        "lastName": "Siciarek",
-        "dateOfBirth": "1966-10-21",
-        "pesel": null,
-        "email": "siciarek@gmail.com",
-        "info": "Bim bam bom.",
-        "createdAt": "2016-06-10 10:18:27",
-        "updatedAt": "2016-06-15 22:47:09"
-    };
+    item: Object = {};
+    items: Array<Person> = [];
+
+    constructor(
+        private fb: FormBuilder,
+        private dataService: PersonService
+    ) {
+    }
+
+    ngOnInit() {
+
+        var id = 947;
+
+        this.dataService
+            .getItem(id)
+            .then(item => {
+                this.item = item;
+            });
+
+        this.dataService
+            .getList()
+            .then(items => {this.items = items})
+
+        this.form = this.fb.group({
+            firstName:  ['', Validators.compose([
+                Validators.required,
+                Validators.minLength(2)
+            ])],
+            lastName:  ['', Validators.compose([
+                Validators.required,
+                Validators.minLength(1)
+            ])],
+            gender:  ['', CustomValidators.gender],
+            pesel:  ['', CustomValidators.pesel]
+        });
+    }
 }

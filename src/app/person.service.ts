@@ -7,7 +7,7 @@ import { Person } from './person';
 @Injectable()
 export class PersonService {
 
-    private serviceUrl = 'api/person.php';  // URL to web api
+    private serviceUrl = 'api/person.json';  // URL to web api
 
     constructor(private http: Http) { }
 

@@ -2,6 +2,7 @@
 
     <div flex="50" layout="column" flex-xs="100">
         <md-card>
+
             <md-toolbar-layout>
                 <md-toolbar color="primary">
                     <i md-icon>face</i>&nbsp;
@@ -12,7 +13,7 @@
             <md-card-content>
                 <form>
 
-                    <md-checkbox [checked]="item.enabled" (change)="item.enabled = !item.enabled">Enabled</md-checkbox>
+                    <md-checkbox [checked]="item.enabled" (mouseup)="item.enabled = !item.enabled">Enabled</md-checkbox>
 
                     <br/>
                     <br/>
@@ -67,7 +68,6 @@
 
     <div flex="50" layout="column" flex-xs="100">
         <md-card>
-
             <md-toolbar-layout>
                 <md-toolbar color="primary">
                     <i md-icon>code</i>&nbsp;
@@ -77,6 +77,36 @@
             <md-card-content>
                 <pre>{{ item | json }}</pre>
             </md-card-content>
+        </md-card>
+
+        <md-card>
+
+            <md-toolbar-layout>
+                <md-toolbar color="primary">
+                    <i md-icon>grid_on</i>&nbsp;
+                    Table
+                </md-toolbar>
+            </md-toolbar-layout>
+
+            <md-data-table layout-fill>
+                <thead>
+                <tr>
+                    <th class="md-text-cell">#</th>
+                    <th class="md-text-cell">First Name</th>
+                    <th class="md-text-cell">Last Name</th>
+                    <th>Gender</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let i of items" (click)="item = i">
+                    <td class="md-text-cell">{{ i.id }}</td>
+                    <td class="md-text-cell">{{ i.firstName }}</td>
+                    <td class="md-text-cell">{{ i.lastName }}</td>
+                    <td>{{ i.gender }}</td>
+                </tr>
+                </tbody>
+            </md-data-table>
+
         </md-card>
     </div>
 
