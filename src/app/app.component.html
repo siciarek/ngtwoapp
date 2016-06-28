@@ -1,6 +1,6 @@
 <md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
 
-    <div flex="50" layout="column" flex-xs="100">
+    <div layout="column" flex="50" flex-xs="100">
         <md-card>
 
             <md-toolbar-layout>
@@ -66,18 +66,7 @@
         </md-card>
     </div>
 
-    <div flex="50" layout="column" flex-xs="100">
-        <md-card>
-            <md-toolbar-layout>
-                <md-toolbar color="primary">
-                    <i md-icon>code</i>&nbsp;
-                    Data
-                </md-toolbar>
-            </md-toolbar-layout>
-            <md-card-content>
-                <pre>{{ item | json }}</pre>
-            </md-card-content>
-        </md-card>
+    <div layout="column" flex="50" flex-xs="100">
 
         <md-card>
 
@@ -108,6 +97,19 @@
             </md-data-table>
 
         </md-card>
+
+        <md-card>
+            <md-toolbar-layout>
+                <md-toolbar color="primary">
+                    <i md-icon>code</i>&nbsp;
+                    Selected
+                </md-toolbar>
+            </md-toolbar-layout>
+            <md-card-content>
+                <pre>{{ item | json }}</pre>
+            </md-card-content>
+        </md-card>
+
     </div>
 
 </md-content>
