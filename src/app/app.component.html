@@ -11,9 +11,9 @@
             </md-toolbar-layout>
 
             <md-card-content>
-                <form>
+                <form [ngFormModel]="form" >
 
-                    <md-checkbox [checked]="item.enabled" (mouseup)="item.enabled = !item.enabled">Enabled</md-checkbox>
+                    <md-checkbox [checked]="item.enabled" (change)="item.enabled = $event.checked">Enabled</md-checkbox>
 
                     <br/>
                     <br/>

@@ -47,6 +47,10 @@ export class AppComponent implements OnInit {
     ) {
     }
 
+    public log(logMsg:string) {
+        console.log(logMsg);
+    }
+    
     ngOnInit() {
 
         var id = 947;
