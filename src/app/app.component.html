@@ -1,115 +1,259 @@
-<md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
+<md-sidenav-layout>
 
-    <div layout="column" flex="50" flex-xs="100">
-        <md-card>
+    <md-sidenav #left [opened]="false" layout-padding> <!-- mode="side" -->
+        <md-list>
+            <md-list-item>
+                <i md-icon>dashboard</i>
+                <div class="md-list-item-text">
+                    <a [routerLink]="['dashboard']">Dashboard</a>
+                </div>
+            </md-list-item>
 
-            <md-toolbar-layout>
-                <md-toolbar color="primary">
-                    <i md-icon>face</i>&nbsp;
-                    User #{{item.id}}
-                </md-toolbar>
-            </md-toolbar-layout>
+            <md-list-item>
+                <i md-icon>face</i>
+                <div class="md-list-item-text">
+                    <a [routerLink]="['form', 32]">Form</a>
+                </div>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
 
-            <md-card-content>
-                <form [ngFormModel]="form" >
+    <md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
+        <div layout="column" flex="50" flex-xs="100">
 
-                    <md-checkbox [checked]="item.enabled" (change)="item.enabled = $event.checked">Enabled</md-checkbox>
 
-                    <br/>
-                    <br/>
+            <md-card>
+                <md-toolbar-layout>
+                    <md-toolbar color="primary">
+                        <i md-icon>face</i>&nbsp;
+                        ROUTER
+                    </md-toolbar>
+                </md-toolbar-layout>
 
-                    <md-radio-group [(ngModel)]="item.gender">
-                        <md-radio-button value="male">Male</md-radio-button>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <md-radio-button value="female">Female</md-radio-button>
-                    </md-radio-group>
+                <md-card-content>
+                    <router-outlet></router-outlet>
+                </md-card-content>
 
-                    <br/>
-                    <br/>
+            </md-card>
 
-                    <md-input [(ngModel)]="item.firstName" placeholder="First Name" required="true"
-                              maxLength="32"></md-input>
+            <md-card>
 
-                    <br/>
+                <md-toolbar-layout>
+                    <md-toolbar color="primary">
+                        <i md-icon>face</i>&nbsp;
+                        User #{{item.id}}
+                    </md-toolbar>
+                </md-toolbar-layout>
 
-                    <md-input [(ngModel)]="item.lastName" placeholder="Last Name" required="true"
-                              maxLength="32"></md-input>
+                <md-card-content>
+                    <form [ngFormModel]="form">
 
-                    <br/>
 
-                    <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth"
-                              required="true" maxLength="10" minLength="10">
-                    </md-input>
 
-                    <br/>
+                        <md-checkbox [checked]="item.enabled" (change)="item.enabled = $event.checked">Enabled
+                        </md-checkbox>
 
-                    <md-input [(ngModel)]="item.pesel" placeholder="PESEL"
-                              maxLength="11" minLength="11" #pesel>
-                        <md-hint align="end">{{pesel.characterCount}} / 11</md-hint>
-                    </md-input>
+                        <br/>
+                        <br/>
 
-                    <br/>
+                        <md-select placeholder="Gender" [(ngModel)]="item.gender">
+                            <md-option *ngFor="let g of gender" [value]="g.value" [label]="g.name"></md-option>
+                        </md-select>
 
-                    <md-input [(ngModel)]="item.email" placeholder="E-mail" type="email" required="true"></md-input>
+                        <br/>
+                        <br/>
 
-                    <br/>
+                        <md-radio-group [(ngModel)]="item.gender">
+                            <md-radio-button value="male">Male</md-radio-button>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <md-radio-button value="female">Female</md-radio-button>
+                        </md-radio-group>
 
-                    <md-input [(ngModel)]="item.info" placeholder="Info"
-                              rows="5"
-                              maxLength="255"></md-input>
+                        <br/>
+                        <br/>
 
-                    <br/>
+                        <md-input [(ngModel)]="item.firstName" placeholder="First Name" required="true"
+                                  maxLength="32"></md-input>
 
-                    <button md-raised-button class="md-raised md-primary">Submit</button>
-                </form>
-            </md-card-content>
-        </md-card>
-    </div>
+                        <br/>
 
-    <div layout="column" flex="50" flex-xs="100">
+                        <md-input [(ngModel)]="item.lastName" placeholder="Last Name" required="true"
+                                  maxLength="32"></md-input>
 
-        <md-card>
+                        <br/>
 
-            <md-toolbar-layout>
-                <md-toolbar color="primary">
-                    <i md-icon>grid_on</i>&nbsp;
-                    Table
-                </md-toolbar>
-            </md-toolbar-layout>
+                        <md-input [(ngModel)]="item.dateOfBirth" placeholder="Date Of Birth"
+                                  required="true" maxLength="10" minLength="10">
+                        </md-input>
 
-            <md-data-table layout-fill>
-                <thead>
-                <tr>
-                    <th class="md-text-cell">#</th>
-                    <th class="md-text-cell">First Name</th>
-                    <th class="md-text-cell">Last Name</th>
-                    <th>Gender</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr *ngFor="let i of items" (click)="item = i">
-                    <td class="md-text-cell">{{ i.id }}</td>
-                    <td class="md-text-cell">{{ i.firstName }}</td>
-                    <td class="md-text-cell">{{ i.lastName }}</td>
-                    <td>{{ i.gender }}</td>
-                </tr>
-                </tbody>
-            </md-data-table>
+                        <br/>
 
-        </md-card>
+                        <md-input [(ngModel)]="item.pesel" placeholder="PESEL"
+                                  maxLength="11" minLength="11" #pesel>
+                            <md-hint align="end">{{pesel.characterCount}} / 11</md-hint>
+                        </md-input>
 
-        <md-card>
-            <md-toolbar-layout>
-                <md-toolbar color="primary">
-                    <i md-icon>code</i>&nbsp;
-                    Selected
-                </md-toolbar>
-            </md-toolbar-layout>
-            <md-card-content>
-                <pre>{{ item | json }}</pre>
-            </md-card-content>
-        </md-card>
+                        <br/>
 
-    </div>
+                        <md-input [(ngModel)]="item.email" placeholder="E-mail" type="email" required="true"></md-input>
 
-</md-content>
+                        <br/>
+
+                        <md-input [(ngModel)]="item.info" placeholder="Info"
+                                  rows="5"
+                                  maxLength="255"></md-input>
+
+                        <br/>
+
+                        <button md-raised-button class="md-raised md-primary">Submit</button>
+                    </form>
+                </md-card-content>
+            </md-card>
+
+            <md-card>
+
+                <md-toolbar-layout>
+                    <md-toolbar color="primary">
+                        <i md-icon>code</i>&nbsp;
+                        Tabs (out of order)
+                    </md-toolbar>
+                </md-toolbar-layout>
+                <md-card-content>
+                    <md-tab-group>
+                        <md-tab>
+                            <template md-tab-label>One</template>
+                            <template md-tab-content>
+                                <md-content class="md-padding">
+                                    <h1 class="md-display-2">Tab One</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante
+                                        augue. Phasellus volutpat neque
+                                        ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium
+                                        ultrices. Maecenas lectus est,
+                                        sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                                </md-content>
+                            </template>
+                        </md-tab>
+                        <md-tab>
+                            <template md-tab-label>Two</template>
+                            <template md-tab-content>
+                                <md-content class="md-padding">
+                                    <h1 class="md-display-2">Tab Two</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante
+                                        augue. Phasellus volutpat neque
+                                        ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium
+                                        ultrices. Maecenas lectus est,
+                                        sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat.
+                                        Nam placerat, tortor in
+                                        ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus.
+                                        Vivamus convallis sodales ante
+                                        varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam
+                                        malesuada consequat diam, a
+                                        facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate,
+                                        euismod ac lorem. Sed felis
+                                        risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim
+                                        venenatis, iaculis tortor eu, bibendum
+                                        ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus
+                                        risus, ac auctor purus
+                                        porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris
+                                        semper.</p>
+                                    <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper
+                                        massa orci nec magna. Donec
+                                        posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis.
+                                        Etiam in tempor tortor. Vivamus
+                                        faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi
+                                        maximus cursus. Nunc urna
+                                        libero,
+                                        viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis
+                                        mi vel tempor. Nullam vitae
+                                        nunc
+                                        leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus.
+                                        Curabitur posuere molestie dictum.
+                                        Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at
+                                        posuere mi. Cras eu fermentum
+                                        nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam,
+                                        congue eu enim scelerisque,
+                                        finibus
+                                        commodo lectus.</p>
+                                </md-content>
+                            </template>
+                        </md-tab>
+                        <md-tab>
+                            <template md-tab-label>Three</template>
+                            <template md-tab-content>
+                                <md-content class="md-padding">
+                                    <h1 class="md-display-2">Tab Three</h1>
+                                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus.
+                                        Curabitur posuere molestie dictum.
+                                        Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at
+                                        posuere mi. Cras eu fermentum
+                                        nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam,
+                                        congue eu enim scelerisque,
+                                        finibus
+                                        commodo lectus.</p>
+                                </md-content>
+                            </template>
+                        </md-tab>
+                    </md-tab-group>
+                </md-card-content>
+            </md-card>
+
+            <md-card>
+                <md-progress-circle mode="determinate" [value]="progressValue"></md-progress-circle>
+                <hr/>
+                <md-progress-circle mode="indeterminate"></md-progress-circle>
+                <hr/>
+                <md-progress-bar mode="determinate" [value]="progressValue"></md-progress-bar>
+                <hr/>
+                <md-progress-bar mode="indeterminate"></md-progress-bar>
+            </md-card>
+
+        </div>
+
+        <div layout="column" flex="50" flex-xs="100">
+
+            <md-card>
+
+                <md-toolbar-layout>
+                    <md-toolbar color="primary">
+                        <i md-icon>grid_on</i>&nbsp;
+                        Table
+                    </md-toolbar>
+                </md-toolbar-layout>
+
+                <md-data-table layout-fill>
+                    <thead>
+                    <tr>
+                        <th class="md-text-cell">#</th>
+                        <th class="md-text-cell">First Name</th>
+                        <th class="md-text-cell">Last Name</th>
+                        <th>Gender</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let i of items" (click)="item = i">
+                        <td class="md-text-cell">{{ i.id }}</td>
+                        <td class="md-text-cell">{{ i.firstName }}</td>
+                        <td class="md-text-cell">{{ i.lastName }}</td>
+                        <td>{{ i.gender }}</td>
+                    </tr>
+                    </tbody>
+                </md-data-table>
+
+            </md-card>
+
+            <md-card>
+                <md-toolbar-layout>
+                    <md-toolbar color="primary" (click)="left.toggle()">
+                        <i md-icon>code</i>&nbsp;
+                        Selected
+                    </md-toolbar>
+                </md-toolbar-layout>
+                <md-card-content>
+                    <pre>{{ item | json }}</pre>
+                </md-card-content>
+            </md-card>
+        </div>
+
+    </md-content>
+</md-sidenav-layout>

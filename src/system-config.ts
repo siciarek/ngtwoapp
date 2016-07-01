@@ -7,27 +7,29 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-   'ng2-material': 'vendor/ng2-material',
-    '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'ng2-material': 'vendor/ng2-material',
+  'wtf-select': 'vendor/wtf-select'
 };
 
 /** User packages configuration. */
 const packages: any = {
 };
 
-
-
 // put the names of any of your Material components here
 const materialPkgs:string[] = [
   'core', 'toolbar', 'button', 'sidenav', 'list', 'card',
-  'input', 'checkbox', 'radio', 'icon', 'progress-circle', 'tabs'
+  'input', 'checkbox', 'radio', 'icon', 'progress-circle',
+  'progress-bar', 'tabs', 'grid-list'
 ];
 
 materialPkgs.forEach((pkg) => {
   packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
 });
 
-packages[`ng2-material`] = {main: `index.js`};
+packages[`wtf-select`] = { main: `select.js` };
+packages[`ng2-material`] = { main: `index.js` };
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
